@@ -1,9 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
-const [data, setData] = useState([]);
-const [isLoading, setLoading] = useState(true);
-const fetch = require('node-fetch');
 
 const url = 'https://app.ecwid.com/api/v3/83761399/products';
 const options = {
@@ -31,27 +28,10 @@ const ecwidAPITest = async () => {
   }
 };
 
-useEffect(() => {
-  ecwidAPITest();
-}, []);
 
 const App = () => {
   return (
-    <View style={{flex: 1, padding: 24}}>
-      {isLoading ? (
-        <ActivityIndicator />
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={({id}) => id}
-          renderItem={({item}) => (
-            <Text>
-              {item.name}, {item.price}
-            </Text>
-          )}
-        />
-      )}
-    </View>
+    <View><Text>Hello</Text></View>
   );
 };
 
